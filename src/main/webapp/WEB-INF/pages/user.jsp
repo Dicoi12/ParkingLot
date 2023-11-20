@@ -1,16 +1,26 @@
-<%--
-  Created by IntelliJ IDEA.
-  User: winko
-  Date: 20.11.2023
-  Time: 09:24
-  To change this template use File | Settings | File Templates.
---%>
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<html>
-<head>
-    <title>Title</title>
-</head>
-<body>
+<%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
+<%@taglib prefix="t" tagdir="/WEB-INF/tags" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 
-</body>
-</html>
+<t:pageTemplate pageTitle="Users">
+  <h1>Welcome to Users</h1>
+  <div class="container text-center">
+    <c:forEach var="user" items="${users}">
+      <div class="row my_7">
+        <div class="col">
+            ${user.username}
+        </div>
+        <div class="col">
+            ${user.email}
+        </div>
+      </div>
+    </c:forEach>
+  </div>
+<%--  <h5 class="mt-3">Free parking spots: ${numberOfFreeParkingSpots}</h5>--%>
+</t:pageTemplate>
+<style>
+  .my_7{
+    margin-top: 7%;
+    margin-bottom: 7%;
+  }
+</style>
