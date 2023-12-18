@@ -13,7 +13,7 @@ import java.util.List;
 import com.parking.parkinglot.ejb.UserBean;
 import jakarta.inject.Inject;
 
-
+@ServletSecurity(value = @HttpConstraint(rolesAllowed = {"WRITE_CARS"}))
 @WebServlet(name = "AddCar", value = "/AddCar")
 public class AddCar extends HttpServlet {
     @Inject UserBean userBean;
